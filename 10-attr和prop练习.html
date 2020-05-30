@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                var input = document.getElementsByTagName("input")[0];
+
+                // prop() 方法返回一个布尔值 只有需要布尔值时才推荐用此方法 否则用attr
+                //$("img").prop("src",input.value);
+                $("img").attr("src",input.value);
+            }
+        });
+    </script>
+    
+</head>
+<body>
+    请输入图片链接：<input type="text" value="">
+    <button>点击按钮切换图片</button><br>
+    <img src="https://i0.hdslb.com/bfs/archive/4de86ebf90b044bf9ba2becf042a8977062b3f99.png" alt="">
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        //$.holdRready(); 函数的作用：暂停jQuery入口函数的执行 传true为暂停
+        $.holdReady(true);
+
+        $(document).ready(function () {
+            alert("jquery执行了");
+        });
+    </script>
+</head>
+<body>
+    <button>恢复ready函数</button>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                //当点击按钮的时 取消暂停jQuery入口函数 之后jQuery入口函数会执行
+                $.holdReady(false);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .text{
+            width: 300px;
+            height: 500px;
+            overflow: auto;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            var btns = document.getElementsByTagName("button");
+            btns[0].onclick = function () {
+                //获取div滚动偏移值
+                //console.log($(".text").scrollTop());
+
+                //获取页面滚动偏移值
+                //由于IE浏览器认为scrollTop属于body 所以为了兼容性 采用如下写法
+                console.log($("html").scrollTop()+$("body").scrollTop());
+                
+            }
+            btns[1].onclick = function () {
+                //设置div滚动偏移值
+                //$(".text").scrollTop(400);
+                
+                //设置页面滚动偏移值 注意: 为了保证浏览器的兼容, 设置网页滚动偏移量时需要按照如下写法
+                $("html,body").scrollTop(400);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, amet! Odio  rem, facilis dolore delectus molestiae dolorum? Nihil minima molestiae animi, molestias, autem veritatis rem reiciendis voluptatibus, delectus quam dolorum! Ipsam doloribus cumque ut, dolore, veritatis repellat natus delectus magni consectetur inventore dolor recusandae tempora nam blanditiis iusto obcaecati corrupti incidunt nemo odio fugit? Pariatur fuga dolore nemo voluptatem, aliquid neque nisi corporis, eaque iste, odit doloremque quos qui consequuntur libero quaerat repellat cupiditate magnam amet! Ratione dolorem consectetur architecto sunt quaerat officia minima facilis harum odit maxime exercitationem magni maiores cum a et facere quod, alias placeat aspernatur repellendus est. Qui exercitationem labore voluptatem et eligendi officia modi ipsam alias aspernatur dolore! Esse architecto odit nostrum eum totam maiores quisquam, laudantium recusandae! Aliquid ipsam cumque natus, officia ipsa sed ut. Fuga unde dolorum obcaecati reprehenderit harum alias eum quos molestiae? Eaque, mollitia tempora. Sit at blanditiis consequuntur sed harum? Facere consectetur illo sed repudiandae omnis, error accusamus perferendis vitae aliquid nesciunt hic, illum reprehenderit eveniet laudantium enim asperiores cumque ut molestiae eius? Magnam harum animi, pariatur consequatur eveniet reiciendis voluptate illo quas dignissimos blanditiis nesciunt voluptatibus eaque provident maiores aliquam voluptates asperiores eum at distinctio laudantium labore! Est quisquam omnis culpa! Enim deleniti aspernatur asperiores a commodi ratione non nostrum architecto corporis numquam. Culpa deserunt aliquid quo ipsam natus molestias perferendis id pariatur officia nisi quasi voluptatem amet quae repellendus ut quam, at ex quos illo consequatur iusto laborum unde. Deserunt excepturi dolor est unde, doloribus vel quas, laboriosam quos iure provident, tenetur in ex? Ad ab, placeat praesentium temporibus, quam distinctio veniam quas ipsum voluptatibus, quaerat tempore cupiditate totam harum! Laborum fuga recusandae natus, fugit facere cum. Adipisci sed consequatur nostrum, unde laudantium veniam error saepe quos, placeat omnis neque, labore blanditiis illum quibusdam! Expedita id nihil quas, non quaerat sit officia, dignissimos facere aperiam explicabo ullam amet voluptas sapiente ipsum. Aliquam velit est quidem in, blanditiis a nulla atque perferendis pariatur sunt ipsam fugit quos voluptatum ullam tempore eos modi quasi nemo dolorem asperiores, vel officia cupiditate, fuga odit. Possimus est illum ab cum iusto et velit odit ducimus quo quaerat magnam voluptas repellat nostrum repudiandae culpa, vitae optio nulla ad earum mollitia sapiente magni sed? Voluptas, atque numquam pariatur suscipit corporis velit minus non dolor illum culpa architecto ex excepturi dolores repellat, debitis magnam ipsum blanditiis accusamus! Sunt ratione iure odio itaque, eligendi minima dignissimos eos quidem, ipsum officia repellat at saepe sequi ab modi. Repellendus voluptatibus totam laudantium quos! Vitae consequuntur minus sapiente veritatis accusamus dolorem reiciendis neque, suscipit odio perferendis provident! Cumque ullam quibusdam necessitatibus possimus rem debitis, illo ad magni unde tenetur dolorum fugiat. Doloribus et error aliquid consequuntur magnam velit est esse quasi delectus, ducimus, a natus quam culpa hic laboriosam officia sed totam quisquam reprehenderit exercitationem dolor obcaecati. Vel veritatis unde ducimus ipsam repudiandae voluptates et, deserunt modi voluptatem tenetur, iusto eaque cum repellat impedit blanditiis ad fugit. Sint non exercitationem adipisci magnam odit recusandae quia sunt odio voluptate perspiciatis, necessitatibus, nulla aperiam quisquam voluptas accusantium dolor dolore autem natus quas harum quo. Labore optio, hic illo ratione alias et nesciunt ullam eum libero provident? Nihil autem, repudiandae maxime itaque similique sequi maiores officiis nobis at fugiat consequatur minima veniam, voluptatum debitis voluptates libero rem hic veritatis expedita distinctio esse repellendus? Magni a laboriosam eius maiores consequuntur ratione ad aperiam accusamus doloremque.</div>
+    <button>获取scrollTop</button>
+    <button>设置scrollTop</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        
+        $(function () {
+            var arr = [1, 2, 3, 4, 5];
+            var obj = {0:1,1:3,2:5,3:7,4:9,length:5}
+            //each(object,[callback])
+            // $.each(arr, function (index, value) {
+            //     console.log(index+"  "+ value);
+            // });
+            //each静态方法还支持对类数组的操作  原生foreach方法并不支持
+            //参数一：要遍历的对象  参数二：回调函数：每遍历一个元素，执行一次
+            //返回值：遍历的对象
+            var res = $.each(obj, function (index, value) {
+                console.log(index+"  "+ value);
+            });
+            console.log(res);
+            
+        });
+
+        //原生foreach方法
+        window.onload = function () {
+            var arr = [1,3,5,7,9];
+            //参数一：元素值    参数二：索引
+            arr.forEach(function (value,index) {
+                console.log(value+"  "+index);
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
