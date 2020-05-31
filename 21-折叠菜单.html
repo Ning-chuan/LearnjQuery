@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            width: 300px;
+            margin: 100px auto;
+        }
+        .nav>li{
+            list-style: none;
+            line-height: 35px;
+            text-indent: 2em;
+            border: 1px solid #000;
+            border-bottom: none;
+            position: relative;
+        }
+        .nav>li:last-child{
+            border-bottom: 1px solid #000;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .nav>li:first-child{
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        .nav>li>span{
+            background: url("img/arrow_right.png") no-repeat center center;
+            width: 32px;
+            height: 32px;
+            /* 箭头放在右侧 */
+            position: absolute;
+            right: 10px;
+            top: 2px;
+        }
+        .sub{
+            display: none;
+        }
+        .sub>li{
+            list-style: none;
+            background-color:mediumpurple;
+            border-bottom: 1px solid #fff;
+        }
+        .sub>li:hover{
+            background-color:steelblue;
+        }
+        .nav>.current>span{
+            transform:rotate(90deg);
+        } 
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $(".nav>li").click(function () {
+                //$(this).children(".sub").css("display","block");可以实现功能但没有动画
+                //获取当前二级菜单元素
+                var $sub = $(this).children(".sub");
+                //让当前二级菜单展开
+                $sub.slideDown(1000);
+                //让当前箭头旋转
+                $(this).addClass("current");
+
+                //siblings()可以获取其他兄弟元素
+                //收起其它二级菜单
+                $(this).siblings().children(".sub").slideUp(1000);
+                //收起其他箭头
+                $(this).siblings().removeClass("current");
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul class="nav">
+        <li>一级菜单<span></span>
+        <ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul>
+        </li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+        <li>一级菜单<span></span><ul class="sub">
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+            <li>二级菜单</li>
+        </ul></li>
+    </ul>
+</body>
+</html>
