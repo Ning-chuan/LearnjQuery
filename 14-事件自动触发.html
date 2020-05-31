@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: #008c8c;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color:darkorange;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            //jQuery中的两种事件自动触发的方法:
+            //1.trigger()  会触发事件冒泡和浏览器默认行为
+            //3.triggerHandler()  不会触发事件冒泡和浏览器默认行为
+            //用法如下
+
+            $(".son").click(function s () {
+                alert("孩子");
+            });
+            $(".father").click(function f () {
+                alert("爹爹");s
+            });
+            // // $(".son").trigger("click");//将会触发事件冒泡
+            // $(".son").triggerHandler("click");//不会触发事件冒泡
+
+            // $("span").click(function () {
+            //     alert("注册框");
+            // })
+            // // $("span").trigger("click");//页面会跳转
+            // $("span").triggerHandler("click");//没有冒泡 页面不会跳转
+
+            $("input[type='submit'").click(function () {
+                alert("提交");
+            });
+            //$("input[type='submit']").trigger("click");//会触发默认行为
+            $("input[type='submit']").triggerHandler("click");//不会触发默认行为
+
+
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com"><span>注册</span></a>
+    <form action="www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>

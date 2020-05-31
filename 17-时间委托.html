@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                $("ul").append("<li>我是新添加的li</li>");
+            });
+
+            // $("ul>li").click(function () {
+            //     //通过核心函数找到的元素不止一个 jquery会给每一个元素都添加事件
+            //     console.log($(this).html());
+            // });
+
+            //上面的做法并不可以给新增的li添加事件 原因是绑定事件的时候还没有新添加的li
+            //想给新添加的li也绑定点击事件 需要采用事件委托的方式
+            //让ul帮li监听click事件 之所以可以让ul监听 是因为入口函数执行时ul已经存在了
+            //参数一: 目标元素  参数二:事件名称  参数三:回调函数
+            $("ul").delegate("li","click",function () {
+                //点击li时,li没有click事件,但是事件冒泡给了ul,ul响应了事件冒泡
+                //事件时通过li传递过去的 所以this指向li
+                console.log($(this).html());
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+    <button>点击添加li</button>
+</body>
+</html>

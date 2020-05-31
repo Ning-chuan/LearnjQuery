@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            width: 200px;
+            height: 200px;
+            background-color: #008c8c;
+        }
+        .son{
+            width: 100px;
+            height: 100px;
+            background-color:darkorange;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            /*
+            想要事件的命名空间有效,必须满足两个条件
+            1.通过on来绑定的
+            2.通过trigger触发事件 只有这样才能单独触发该命名空间的事件
+            */
+            $(".son").on("click.zs",function () {
+                alert("zs click");
+            })
+            $(".son").on("click.ls",function () {
+                alert("ls click");
+            })
+            $(".son").triggerHandler("click.zs");
+        });
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <a href="http://www.baidu.com"><span>注册</span></a>
+    <form action="www.taobao.com">
+        <input type="text">
+        <input type="submit">
+    </form>
+</body>
+</html>
