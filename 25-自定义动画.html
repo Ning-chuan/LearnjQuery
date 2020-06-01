@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            margin-top: 30px;
+            width: 150px;
+            height: 150px;
+            background-color:blue;
+        }
+        .two{
+            background-color:orange
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                //自定义动画使用 animate() 函数 
+                //参数一：对象（目标状态） 参数二：所用时间
+                //参数三：动画效果 字符串形式  "linear"匀速  "swing"慢快慢（默认）
+                //参数四：回调函数 动画执行完毕调用
+                // $("div").eq(0).animate({
+                //     width:600,
+                //     height:300,
+                // },1000,function () {
+                //     alert("自定义动画执行完毕");
+                // });
+
+                $("div").eq(0).animate({
+                    //指定属性：
+                    marginLeft:700
+                },5000,"swing",function () {
+                    alert("自定义动画执行完毕");
+                });
+                $("div").eq(1).animate({
+                    marginLeft:700
+                },5000,"linear",function () {
+                    alert("自定义动画执行完毕");
+                });
+
+            });
+            $("button").eq(1).click(function () {
+                $("div").eq(0).animate({
+                    //累加属性：
+                    width:"+=100"
+                },500,function () {
+                    console.log("添加属性动画执行完毕");
+                });
+            });
+            $("button").eq(2).click(function () {
+                $("div").eq(0).animate({
+                    //关键字：
+                    //width:"hide" //隐藏
+                    width:"toggle" //切换
+                },500,function () {
+                    //console.log("添加属性动画执行完毕");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>操作属性</button>
+    <button>添加属性</button>
+    <button>关键字</button>
+    <div></div>
+    <div class="two"></div>
+</body>
+</html>

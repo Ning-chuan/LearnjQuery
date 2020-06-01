@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .adv{
+            display:none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+        }
+        .adv span{
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            /* background-color: rgb(255, 0, 0); */
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            //执行广告动画：
+            /*  
+            $(".adv").slideDown(1000, function () {
+                $(".adv").fadeOut(1000,function () {
+                    $(".adv").fadeIn(1000);
+                });
+            }); 
+            */
+            //链式编程写法  1.停止之前的动画 2.滑动展示 3.淡出 4.淡入
+            $(".adv").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+
+            //监听span点击事件
+            $(".adv>span").click(function () {
+                $(".adv").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="adv">
+        <img src="img/ad-pic.png" alt="">
+        <span></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: #008c8c;
+        }
+        .two{
+            width: 600px;
+            height: 20px;
+            background-color: rgb(186, 186, 194);
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                //delay() 延迟执行 
+                //下面代码目的是 宽度变为600后过两秒高度变为500
+                // $(".one").animate({
+                //     width:600
+                // },1000).delay(2000).animate({
+                //     height:500
+                // },1000);
+
+                $(".one").animate({
+                    width:600
+                },1000).animate({
+                    height:500
+                },1000).animate({
+                    width:200
+                },1000).animate({
+                    height:100
+                },1000);
+            });
+            $("button").eq(1).click(function () {
+                /*
+                stop()方法可以传两个参数
+                参数一：是否停止后续动画（true停止/false不停止） 默认不停止
+                参数二：是否完成当前动画（true完成/false不完成） 默认不完成
+                */
+                //$(".one").stop();
+                // $(".one").stop(true,true);
+                $(".one").stop(false,true);
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>开始动画</button>
+    <button>停止动画</button>
+    <div class="one"></div>
+    <div class="two"></div>
+</body>
+</html>

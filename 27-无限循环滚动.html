@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 600px;
+            height: 161px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style: none;
+            width: 1800px;
+            height: 161px;
+            background-color: #111;
+        }
+
+        ul>li {
+            float: left;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script>
+        $(function () {
+            //定义变量记录偏移量
+            var offset = 0;
+            //定义变量标记定时器
+            var timer;
+            function autoMove() {
+                timer = setInterval(function () {
+                    offset -= 10;
+                    if (offset <= -1200) {
+                        offset = 0;
+                    }
+                    $("ul").css("marginLeft", offset);
+                }, 50);
+            }
+            autoMove();//调用方法开启定时器
+            $("li").hover(function () {
+                //鼠标移入
+                //0.停止移动（关闭定时器）
+                clearInterval(timer);
+                //1.给其他li添加蒙版
+                $(this).siblings().fadeTo(100, 0.5);
+                //2.清除当前li蒙版
+                $(this).fadeTo(100, 1)
+            }, function () {
+                //鼠标离开
+                //1.恢复移动（开启定时器）
+                autoMove();
+                //2.清除所有li蒙版
+                $("li").fadeTo(100,1);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="img/a.jpg" alt=""></li>
+            <li><img src="img/b.jpg" alt=""></li>
+            <li><img src="img/c.jpg" alt=""></li>
+            <li><img src="img/d.jpg" alt=""></li>
+            <li><img src="img/a.jpg" alt=""></li>
+            <li><img src="img/b.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+
+</html>
